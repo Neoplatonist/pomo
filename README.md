@@ -1,5 +1,7 @@
 # Pomodoro Timer in Go
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/neoplatonist/pomo)](https://goreportcard.com/report/github.com/neoplatonist/pomo)
+
 A simple Pomodoro timer command-line application written in Go.
 
 ## Requirements
