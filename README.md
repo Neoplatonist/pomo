@@ -49,6 +49,10 @@ pomo start --pomodoro 30m --break 10m --notification 1800000 --warning 5m
 
 The timer will display a notification when it's time for a break or when the Pomodoro is complete. You can press Enter to continue to the next phase of the timer.
 
+## License
+
+This Pomodoro timer is open-source and released under the [MIT License](LICENSE).
+
 ## Author
 
 [Neoplatonist](https://github.com/neoplatonist)
