@@ -21,7 +21,7 @@ var (
 	// Default durations
 	defaultPomodoroDuration        = 25 * time.Minute
 	defaultBreakDuration           = 5 * time.Minute
-	defaultNotificationDuration    = "1800000"
+	defaultNotificationDuration    = "1800000" // 30 minutes, time is in milliseconds
 	defaultPomodoroWarningDuration = 5 * time.Minute
 	defaultBreakWarningDuration    = 1 * time.Minute
 
@@ -30,7 +30,15 @@ var (
 )
 
 func main() {
-	var rootCmd = &cobra.Command{Use: "pomo"}
+	var rootCmd = &cobra.Command{Use: "pomo",
+		Short: "A Pomodoro timer",
+		Long: `A Pomodoro timer helps you manage your work time effectively. It consists of work intervals
+(pomodoros) followed by short breaks. The timer will notify you when it's time to take a break
+and when the break is over. You can customize the Pomodoro and break durations as well as
+the notification duration.
+
+Written by: Neoplatonist`,
+	}
 
 	// Define command-line flags for Pomodoro, break, and notification durations
 	rootCmd.Flags().DurationVarP(&pomodoroDuration, "pomodoro", "p", defaultPomodoroDuration, "Pomodoro duration")
