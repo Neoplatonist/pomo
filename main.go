@@ -19,10 +19,10 @@ var (
 	warningBreakDuration    time.Duration
 
 	// Default durations
-	defaultPomodoroDuration        = 25 * time.Minute
-	defaultBreakDuration           = 5 * time.Minute
+	defaultPomodoroDuration        = 1 * time.Minute
+	defaultBreakDuration           = 2 * time.Minute
 	defaultNotificationDuration    = "1800000" // 30 minutes, time is in milliseconds
-	defaultPomodoroWarningDuration = 5 * time.Minute
+	defaultPomodoroWarningDuration = 1 * time.Minute
 	defaultBreakWarningDuration    = 1 * time.Minute
 
 	pomodoroWarningSent bool // Flag to track if Pomodoro warning is sent
@@ -110,7 +110,7 @@ func startPomodoro(cmd *cobra.Command, args []string) {
 		fmt.Printf("Time remaining: %s\n%s\n", formatDuration(remainingTime), loadingBar)
 
 		// Check if it's time to send the warning notification and the warning hasn't been sent
-		if remainingTime <= warningPomodoroDuration && !breakWarningSent {
+		if remainingTime <= warningBreakDuration && !breakWarningSent {
 			sendNotification("Break Warning", fmt.Sprintf("Break ends in %s.", formatDuration(remainingTime)))
 			breakWarningSent = true
 		}
